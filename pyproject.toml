@@ -1,0 +1,48 @@
+[project]
+name = "diff-fit"
+version = "0.1.0"
+description = "Diff-FIT (Diffusion Facial Identification Technique) for creating facial composites."
+requires-python = ">=3.10,<3.15"
+authors = [
+    {name = "Matej Miočić",email = "miocic2@gmail.com"}
+]
+dependencies = [
+    "gradio (==4.44.0)",
+    "diffusers (==0.30.3)",
+    "opencv-python (==4.10.0.84)",
+    "torch (>=2.9.1,<3.0.0)",
+    "torchvision (>=0.24.1,<0.25.0)",
+    "pandas (>=2.3.3,<3.0.0)",
+    "huggingface-hub (==0.25.2)",
+    "typer (==0.12.5)",
+    "gradio-imageslider (>=0.0.20,<0.0.21)",
+    "dlib (==20.0.0)",
+    "lsq-ellipse (>=2.2.1,<3.0.0)",
+    "einops (>=0.8.1,<0.9.0)",
+    "pytorch-lightning (>=2.6.0,<3.0.0)",
+    "transformers (==4.45.2)",
+    "accelerate (>=1.12.0,<2.0.0)",
+    "torchsde (>=0.2.6,<0.3.0)",
+    "gdown (>=5.2.0,<6.0.0)",
+    "peft (==0.13.2)",
+    "fastapi (==0.115.2)",
+    "pydantic (==2.9.2)",
+    "numpy (==1.26.4)",
+]
+readme = "README.md"
+license = { text = "Apache License" }
+
+[tool.poetry]
+packages = [
+    { include = "diff_fit" },
+    { include = "face_parsing" },
+    { include = "lightning_drag" }
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+download_weights = "diff_fit.utils:download_weights"
+diff_fit = "diff_fit.frontend:run_diff_fit"
