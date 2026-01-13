@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import torch
-from PIL import Image
+from PIL import Image, ImageFilter, ImageOps
 
 from diff_fit import RESNET_WEIGHTS
 from diff_fit.inpaint_utils.constants import MODEL, NUM_CLASSES, SEGMENTATION_CLASSES
@@ -45,6 +45,7 @@ class FaceInpaint:
                 mask = np.where(self.mask != face_class, mask, 0)
 
         mask = cv2.resize(mask, image.size)
+        mask[mask != 255] = 0
 
         blended_image = cv2.addWeighted(np.array(image), 1, mask, 0.4, 0)
 

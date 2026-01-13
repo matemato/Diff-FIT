@@ -1,0 +1,12 @@
+{
+    "mask_attribute": "Beard",
+    "face_attribute": "facial_hair",
+    "adjective": "beard",
+    "transformed_adjective": "no facial hair",
+    "model": "lightning5",
+    "steps": 5,
+    "cfg": 1.5,
+    "scheduler": "single",
+    "strength": 0.8,
+    "time": 2.2569751739501953
+}

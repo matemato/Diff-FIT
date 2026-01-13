@@ -28,6 +28,7 @@ dependencies = [
     "fastapi (==0.115.2)",
     "pydantic (==2.9.2)",
     "numpy (==1.26.4)",
+    "types-tqdm (>=4.67.0.20250809,<5.0.0.0)",
 ]
 readme = "README.md"
 license = { text = "Apache License" }
@@ -36,7 +37,8 @@ license = { text = "Apache License" }
 packages = [
     { include = "diff_fit" },
     { include = "face_parsing" },
-    { include = "lightning_drag" }
+    { include = "lightning_drag" },
+    { include = "generate_images" }
 ]
 
 [build-system]
@@ -46,3 +48,6 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.scripts]
 download_weights = "diff_fit.utils:download_weights"
 diff_fit = "diff_fit.frontend:run_diff_fit"
+generate_images = "generate_images.generate_images:main"
+generate_inpainting_images = "generate_images.generate_inpainting_images:main"
+generate_img2img_images = "generate_images.generate_img2img_images:main"

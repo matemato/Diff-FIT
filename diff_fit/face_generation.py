@@ -34,7 +34,6 @@ class FaceGeneration:
         self.inpaint_pipe.scheduler = get_scheduler(
             pipe=self.inpaint_pipe, original_scheduler_config=self.original_scheduler
         )
-        self.three = 0
 
     def generate_images(
         self,
@@ -56,7 +55,6 @@ class FaceGeneration:
         if pipe is None:
             pipe = self.txt2img_pipe
 
-        self.three += 1
         randomize_seed = seed == -1
 
         images = []
@@ -80,8 +78,6 @@ class FaceGeneration:
                 prompt = initial_prompt
             if negative_prompt == "":
                 negative_prompt = None
-            print(f"Prompt: {prompt}")
-            print(f"Negative prompt: {negative_prompt}")
             (
                 prompt_embeds,
                 negative_prompt_embeds,
@@ -106,7 +102,7 @@ class FaceGeneration:
                 image=init_image,
                 mask_image=mask,
                 generator=generator,
-                guidance_rescale=0.7,
+                # guidance_rescale=0.7,
             ).images
 
             for im in imgs:
@@ -216,6 +212,8 @@ class FaceGeneration:
                 np.array(init_image), np.array(mask)[:, :, 0]
             )
 
+        print(prompt, negative_prompt)
+
         inpaint_results = self.generate_images(
             pipe=self.inpaint_pipe,
             initial_prompt=prompt,
@@ -243,14 +241,29 @@ class FaceGeneration:
                 inpaint_results[0][i] = Image.fromarray(initial_image).convert("RGB")
             elif paste_img_back:
                 if img.size == init_image.size:
+                    # Convert mask to grayscale
                     mask = mask.convert("L")
-                    for _ in range(3):
-                        mask = mask.filter(ImageFilter.MaxFilter(3))
-                    # mask.save("mask_after.png")
-                    binary_mask = mask.point(lambda x: 255 if x > 127 else 0)
 
-                    binary_mask = binary_mask.convert("1")
-                    img = Image.composite(img, init_image, binary_mask)
+                    # Slightly expand the mask (covers artifacts near edges)
+                    # for _ in range(20):  # fewer iterations = less edge damage
+                    # mask = mask.filter(ImageFilter.MaxFilter(3))
+
+                    # Feather heavily for 1024x1024 images
+                    mask = mask.filter(ImageFilter.GaussianBlur(24))
+
+                    # Convert to numpy for soft alpha blend
+                    mask_np = np.asarray(mask, dtype=np.float32) / 255.0
+                    mask_np = np.clip(mask_np, 0.0, 1.0)
+
+                    img_np = np.asarray(img, dtype=np.float32)
+                    init_np = np.asarray(init_image, dtype=np.float32)
+
+                    # Paste original back using SOFT mask
+                    out = img_np * mask_np[..., None] + init_np * (
+                        1.0 - mask_np[..., None]
+                    )
+
+                    img = Image.fromarray(out.astype(np.uint8))
 
                 inpaint_results[0][i] = img
 

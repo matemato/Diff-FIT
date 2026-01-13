@@ -1,0 +1,17 @@
+{
+    "age": 30,
+    "race": "black",
+    "sex": "male",
+    "hair_length": "short",
+    "hair_color": "dark brown",
+    "hair_style": "straight",
+    "eye_color": "blue",
+    "glasses": "no glasses",
+    "facial_hair": "no facial hair",
+    "prompt": "29 year old black male with espresso brown short half-up top knot hair, sapphire blue eyes, from Estonia, portrait, front shot, white background",
+    "negative_prompt": "octane render, render, drawing, cartoon, painting, anime, bad photo, bad photography, worst quality, low quality, blurry, bad teeth, deformed teeth, deformed lips, bad anatomy, bad proportions, deformed iris, deformed pupils, deformed eyes, bad eyes, deformed face, ugly face, bad face, morbid, mutilated, mutation, disfigured, beard, mustache, facial hair",
+    "steps": 5,
+    "cfg": 1,
+    "scheduler": "single",
+    "time": 1.3483648300170898
+}

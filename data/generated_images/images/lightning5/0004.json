@@ -1,0 +1,17 @@
+{
+    "age": 20,
+    "race": "black",
+    "sex": "male",
+    "hair_length": "long",
+    "hair_color": "gray",
+    "hair_style": "straight",
+    "eye_color": "brown",
+    "glasses": "no glasses",
+    "facial_hair": "no facial hair",
+    "prompt": "14 year old black male with ash gray long blunt cut hair, hazel brown eyes, from Malta, portrait, front shot, white background",
+    "negative_prompt": "octane render, render, drawing, cartoon, painting, anime, bad photo, bad photography, worst quality, low quality, blurry, bad teeth, deformed teeth, deformed lips, bad anatomy, bad proportions, deformed iris, deformed pupils, deformed eyes, bad eyes, deformed face, ugly face, bad face, morbid, mutilated, mutation, disfigured, beard, mustache, facial hair",
+    "steps": 5,
+    "cfg": 1,
+    "scheduler": "single",
+    "time": 1.3530373573303223
+}

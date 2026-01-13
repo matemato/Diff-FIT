@@ -1,0 +1,17 @@
+{
+    "age": 30,
+    "race": "black",
+    "sex": "female",
+    "hair_length": "medium",
+    "hair_color": "gray",
+    "hair_style": "straight",
+    "eye_color": "gray",
+    "glasses": "no glasses",
+    "facial_hair": "",
+    "prompt": "36 year old black female with dove gray short tucked behind ears hair, steel gray eyes, from Kosovo, portrait, front shot, white background",
+    "negative_prompt": "octane render, render, drawing, cartoon, painting, anime, bad photo, bad photography, worst quality, low quality, blurry, bad teeth, deformed teeth, deformed lips, bad anatomy, bad proportions, deformed iris, deformed pupils, deformed eyes, bad eyes, deformed face, ugly face, bad face, morbid, mutilated, mutation, disfigured, mustache",
+    "steps": 5,
+    "cfg": 1,
+    "scheduler": "single",
+    "time": 1.3473093509674072
+}

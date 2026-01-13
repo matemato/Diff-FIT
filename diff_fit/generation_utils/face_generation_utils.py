@@ -41,6 +41,7 @@ def get_scheduler(pipe=None, scheduler=None, original_scheduler_config=None):
     schedulers = {
         "single": DPMSolverSinglestepScheduler.from_config(
             original_scheduler_config,
+            lower_order_final=True,
         ),
         "single_karras": DPMSolverSinglestepScheduler.from_config(
             original_scheduler_config, use_karras_sigmas=True

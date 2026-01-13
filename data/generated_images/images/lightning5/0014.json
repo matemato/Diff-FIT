@@ -1,0 +1,17 @@
+{
+    "age": 10,
+    "race": "white",
+    "sex": "male",
+    "hair_length": "medium",
+    "hair_color": "blonde",
+    "hair_style": "curly",
+    "eye_color": "brown",
+    "glasses": "eyeglasses",
+    "facial_hair": "beard and mustache",
+    "prompt": "9 year old white male with champagne blonde medium-length curly mohawk hair, espresso brown eyes, oval eyeglasses, beard and mustache, from Latvia, portrait, front shot, white background",
+    "negative_prompt": "octane render, render, drawing, cartoon, painting, anime, bad photo, bad photography, worst quality, low quality, blurry, bad teeth, deformed teeth, deformed lips, bad anatomy, bad proportions, deformed iris, deformed pupils, deformed eyes, bad eyes, deformed face, ugly face, bad face, morbid, mutilated, mutation, disfigured",
+    "steps": 5,
+    "cfg": 1,
+    "scheduler": "single",
+    "time": 1.3608136177062988
+}

@@ -10,13 +10,13 @@ from lightning_drag.drag_utils.ui_utils import LightningDragUI
 class FaceTransformation:
     def __init__(self):
         print("\nInitializing LightningDrag...\n")
-        self.lightning_drag = LightningDragUI(
-            f"{LIGHTNING_DRAG_WEIGHTS}/dreamshaper-8-inpainting/",
-            vae_path=f"{LIGHTNING_DRAG_WEIGHTS}/sd-vae-ft-mse/",
-            ip_adapter_path=f"{LIGHTNING_DRAG_WEIGHTS}/IP-Adapter/models/",
-            lightning_drag_path=f"{LIGHTNING_DRAG_WEIGHTS}/lightning-drag-sd15",
-            lcm_lora_path=f"{LIGHTNING_DRAG_WEIGHTS}/lcm-lora-sdv1-5",
-        )
+        # self.lightning_drag = LightningDragUI(
+        #     f"{LIGHTNING_DRAG_WEIGHTS}/dreamshaper-8-inpainting/",
+        #     vae_path=f"{LIGHTNING_DRAG_WEIGHTS}/sd-vae-ft-mse/",
+        #     ip_adapter_path=f"{LIGHTNING_DRAG_WEIGHTS}/IP-Adapter/models/",
+        #     lightning_drag_path=f"{LIGHTNING_DRAG_WEIGHTS}/lightning-drag-sd15",
+        #     lcm_lora_path=f"{LIGHTNING_DRAG_WEIGHTS}/lcm-lora-sdv1-5",
+        # )
         self.image = None
         self.stored_latents = None
         self.latents = None

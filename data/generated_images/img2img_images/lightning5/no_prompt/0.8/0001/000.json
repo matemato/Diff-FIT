@@ -1,0 +1,8 @@
+{
+    "prompt": "",
+    "steps": 5,
+    "cfg": 1,
+    "scheduler": "single",
+    "strength": 0.8,
+    "time": 1.4808266162872314
+}

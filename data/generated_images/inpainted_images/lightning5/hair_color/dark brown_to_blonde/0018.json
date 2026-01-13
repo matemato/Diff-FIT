@@ -1,0 +1,12 @@
+{
+    "mask_attribute": "Hair",
+    "face_attribute": "hair_color",
+    "adjective": "dark brown",
+    "transformed_adjective": "blonde",
+    "model": "lightning5",
+    "steps": 5,
+    "cfg": 1.5,
+    "scheduler": "single",
+    "strength": 1,
+    "time": 2.659247636795044
+}

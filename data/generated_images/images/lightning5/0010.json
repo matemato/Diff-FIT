@@ -1,0 +1,17 @@
+{
+    "age": 50,
+    "race": "asian",
+    "sex": "female",
+    "hair_length": "long",
+    "hair_color": "light brown",
+    "hair_style": "straight",
+    "eye_color": "gray",
+    "glasses": "sunglasses",
+    "facial_hair": "",
+    "prompt": "41 year old asian female with light brown medium-length layered straight hair, silver gray eyes, pointy sunglasses, from North Macedonia, portrait, front shot, white background",
+    "negative_prompt": "octane render, render, drawing, cartoon, painting, anime, bad photo, bad photography, worst quality, low quality, blurry, bad teeth, deformed teeth, deformed lips, bad anatomy, bad proportions, deformed iris, deformed pupils, deformed eyes, bad eyes, deformed face, ugly face, bad face, morbid, mutilated, mutation, disfigured",
+    "steps": 5,
+    "cfg": 1,
+    "scheduler": "single",
+    "time": 1.3336458206176758
+}
