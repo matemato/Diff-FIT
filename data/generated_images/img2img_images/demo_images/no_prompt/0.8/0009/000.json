@@ -1,0 +1,10 @@
+{
+    "prompt": "",
+    "seed": 9,
+    "model": "lightning5",
+    "steps": 5,
+    "cfg": 1,
+    "scheduler": "single",
+    "strength": 0.8,
+    "time": 0.8643395900726318
+}

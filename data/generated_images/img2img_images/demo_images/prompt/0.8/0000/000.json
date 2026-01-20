@@ -1,0 +1,10 @@
+{
+    "prompt": "70 year old black female, bald, blue eyes, eyeglasses",
+    "seed": 0,
+    "model": "lightning5",
+    "steps": 5,
+    "cfg": 1,
+    "scheduler": "single",
+    "strength": 0.8,
+    "time": 4.446712970733643
+}

@@ -6,7 +6,7 @@ import time
 from tqdm import tqdm
 
 from diff_fit.face_generation import FaceGeneration
-from diff_fit.generation_utils.constants import GENERATION_DROPDOWN
+from diff_fit.generation_utils.constants import GENERATION_DROPDOWN, MAX_SEED
 from diff_fit.generation_utils.face_generation_utils import generate_prompt
 from diff_fit.utils import get_model_id
 from generate_images import GENERATED_IMAGES_DIR
@@ -19,19 +19,15 @@ class GenerateImages:
         self.config = config
         self.model_id = get_model_id(config.model)
         self.face_generation = FaceGeneration(self.model_id)
-        self.path = GENERATED_IMAGES_DIR / config.model
+        self.path = GENERATED_IMAGES_DIR / self.config.data_path
         os.makedirs(self.path, exist_ok=True)
 
-    def get_random_attributes(self, seed: int) -> dict:
+    def get_random_attributes(self) -> dict:
         """
-        Args:
-            seed (int): Seed for random number generation.
-
-            Returns:
-            dict: Dictionary of randomly selected face attributes.
+        Returns:
+        dict: Dictionary of randomly selected face attributes.
 
         """
-        random.seed(seed)
         age = random.choice(range(10, 80, 10))
         race = random.choice(GENERATION_DROPDOWN["Ethnicity"][1:])
         sex = random.choice(GENERATION_DROPDOWN["Sex"][1:])
@@ -46,12 +42,10 @@ class GenerateImages:
             if hair_length != "bald"
             else ""
         )
-        eye_color = random.choice(GENERATION_DROPDOWN["Eye color"][1:])
-        glasses = random.choice(GENERATION_DROPDOWN["Glasses"][1:])
+        eye_color = random.choice(GENERATION_DROPDOWN["Eye color"])
+        glasses = random.choice(GENERATION_DROPDOWN["Glasses"])
         facial_hair = (
-            random.choice(GENERATION_DROPDOWN["Facial hair"][1:])
-            if sex == "male"
-            else ""
+            random.choice(GENERATION_DROPDOWN["Facial hair"]) if sex == "male" else ""
         )
         return {
             "age": age,
@@ -65,19 +59,19 @@ class GenerateImages:
             "facial_hair": facial_hair,
         }
 
-    def generate_results(self, seed: int, attrs: dict) -> None:
+    def generate_results(self, i: int, seed: int, attrs: dict) -> None:
         """
         Args:
+            i (int): Index for image generation.
             seed (int): Seed for random number generation.
             attrs (dict): Dictionary of face attributes.
 
         Generates an image based on the provided attributes and saves it along with metadata.
         """
-
         prompt, negative_prompt = generate_prompt(
             ("", *attrs.values()),
             seed=seed,
-            randomize=self.config.randomize,
+            randomize=self.config.randomize_variations,
             additional_negative_prompt=True,
         )
 
@@ -91,25 +85,32 @@ class GenerateImages:
             strength=None,
             init_image=None,
             mask=None,
-            randomize=self.config.randomize,
+            randomize=self.config.randomize_variations,
             negative_prompt=negative_prompt,
             seed=seed,
             scheduler=self.config.scheduler,
         )
         end_time = time.time()
 
-        image[0].save(f"{self.path}/{seed:04}.png")
+        image[0].save(f"{self.path}/{i:04}.png")
 
         self.save_metadata(
-            attrs,
-            seed,
-            prompt,
-            negative_prompt,
-            end_time - start_time,
+            attrs=attrs,
+            i=i,
+            prompt=prompt,
+            negative_prompt=negative_prompt,
+            time=end_time - start_time,
+            seed=seed,
         )
 
     def save_metadata(
-        self, attrs: dict, seed: int, prompt: str, negative_prompt: str, time: float
+        self,
+        attrs: dict,
+        i: int,
+        prompt: str,
+        negative_prompt: str,
+        time: float,
+        seed: int,
     ) -> None:
         """
         Args:
@@ -123,12 +124,15 @@ class GenerateImages:
         """
         attrs["prompt"] = prompt
         attrs["negative_prompt"] = negative_prompt
+        attrs["seed"] = seed
         attrs["steps"] = self.config.steps
         attrs["cfg"] = self.config.cfg
         attrs["scheduler"] = self.config.scheduler
         attrs["time"] = time
+        attrs["model"] = self.config.model
+        attrs["randomize_variations"] = self.config.randomize_variations
 
-        with open(f"{self.path}/{seed:04}.json", "w") as file:
+        with open(f"{self.path}/{i:04}.json", "w") as file:
             json.dump(attrs, file, indent=4)
 
 
@@ -136,8 +140,13 @@ def main():
     """Main function to generate images based on random attributes."""
     generate_images = GenerateImages(ImageGenConfig())
     for i in tqdm(range(generate_images.config.number_of_images), "Generating Images"):
-        attrs = generate_images.get_random_attributes(i)
-        generate_images.generate_results(i, attrs)
+        if generate_images.config.randomize_seed:
+            seed = random.randint(1, MAX_SEED)
+        else:
+            seed = i
+        random.seed(seed)
+        attrs = generate_images.get_random_attributes()
+        generate_images.generate_results(i=i, seed=seed, attrs=attrs)
 
 
 if __name__ == "__main__":

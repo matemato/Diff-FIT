@@ -22,10 +22,10 @@ class GenerateInpaintingResults:
         self.model_id = get_model_id(gen_config.model)
         self.face_generation = FaceGeneration(self.model_id)
         self.face_inpaint = FaceInpaint()
-        self.source_img_path = GENERATED_IMAGES_DIR / gen_config.model
+        self.source_img_path = GENERATED_IMAGES_DIR / gen_config.data_path
         self.save_path = (
             GENERATED_INPAINTING_DIR
-            / gen_config.model
+            / gen_config.data_path
             / self.face_attribute
             / f"{self.adjective}_to_{self.transformed_adjective}"
         )

@@ -1,0 +1,10 @@
+{
+    "prompt": "30 year old asian female, bald",
+    "seed": 7,
+    "model": "lightning5",
+    "steps": 5,
+    "cfg": 1,
+    "scheduler": "single",
+    "strength": 0.8,
+    "time": 0.8793561458587646
+}

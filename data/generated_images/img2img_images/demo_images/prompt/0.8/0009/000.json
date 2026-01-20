@@ -1,0 +1,10 @@
+{
+    "prompt": "40 year old white female with dark brown medium straight hair, sunglasses",
+    "seed": 9,
+    "model": "lightning5",
+    "steps": 5,
+    "cfg": 1,
+    "scheduler": "single",
+    "strength": 0.8,
+    "time": 0.8705482482910156
+}

@@ -1,0 +1,10 @@
+{
+    "prompt": "20 year old white male with light brown medium curly hair, green eyes, eyeglasses, shaven",
+    "seed": 1,
+    "model": "lightning5",
+    "steps": 5,
+    "cfg": 1,
+    "scheduler": "single",
+    "strength": 0.8,
+    "time": 0.886732816696167
+}

@@ -1,0 +1,10 @@
+{
+    "prompt": "20 year old black male with gray long straight hair",
+    "seed": 4,
+    "model": "lightning5",
+    "steps": 5,
+    "cfg": 1,
+    "scheduler": "single",
+    "strength": 0.8,
+    "time": 0.8695406913757324
+}

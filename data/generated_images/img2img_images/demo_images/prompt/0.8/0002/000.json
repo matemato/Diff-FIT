@@ -1,0 +1,10 @@
+{
+    "prompt": "70 year old asian male, bald, blue eyes, no glasses, shaven",
+    "seed": 2,
+    "model": "lightning5",
+    "steps": 5,
+    "cfg": 1,
+    "scheduler": "single",
+    "strength": 0.8,
+    "time": 0.866661787033081
+}

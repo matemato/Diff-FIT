@@ -1,0 +1,10 @@
+{
+    "prompt": "70 year old white male with blonde long straight hair, no glasses, shaven",
+    "seed": 6,
+    "model": "lightning5",
+    "steps": 5,
+    "cfg": 1,
+    "scheduler": "single",
+    "strength": 0.8,
+    "time": 0.857581615447998
+}

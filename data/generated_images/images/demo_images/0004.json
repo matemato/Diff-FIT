@@ -1,0 +1,20 @@
+{
+    "age": 20,
+    "race": "black",
+    "sex": "male",
+    "hair_length": "long",
+    "hair_color": "gray",
+    "hair_style": "straight",
+    "eye_color": "",
+    "glasses": "",
+    "facial_hair": "",
+    "prompt": "20 year old black male with gray long straight hair, portrait, front shot, white background",
+    "negative_prompt": "octane render, render, drawing, cartoon, painting, anime, bad photo, bad photography, worst quality, low quality, blurry, bad teeth, deformed teeth, deformed lips, bad anatomy, bad proportions, deformed iris, deformed pupils, deformed eyes, bad eyes, deformed face, ugly face, bad face, morbid, mutilated, mutation, disfigured",
+    "seed": 4,
+    "steps": 5,
+    "cfg": 1,
+    "scheduler": "single",
+    "time": 0.7923822402954102,
+    "model": "lightning5",
+    "randomize_variations": false
+}

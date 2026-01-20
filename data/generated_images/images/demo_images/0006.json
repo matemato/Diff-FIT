@@ -1,0 +1,20 @@
+{
+    "age": 70,
+    "race": "white",
+    "sex": "male",
+    "hair_length": "long",
+    "hair_color": "blonde",
+    "hair_style": "straight",
+    "eye_color": "",
+    "glasses": "no glasses",
+    "facial_hair": "shaven",
+    "prompt": "70 year old white male with blonde long straight hair, no glasses, shaven, portrait, front shot, white background",
+    "negative_prompt": "octane render, render, drawing, cartoon, painting, anime, bad photo, bad photography, worst quality, low quality, blurry, bad teeth, deformed teeth, deformed lips, bad anatomy, bad proportions, deformed iris, deformed pupils, deformed eyes, bad eyes, deformed face, ugly face, bad face, morbid, mutilated, mutation, disfigured",
+    "seed": 6,
+    "steps": 5,
+    "cfg": 1,
+    "scheduler": "single",
+    "time": 0.8018181324005127,
+    "model": "lightning5",
+    "randomize_variations": false
+}
