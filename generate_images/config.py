@@ -21,6 +21,11 @@ class ImageGenConfig:
 class InpaintingConfig:
     """
     Configuration for inpainting tasks.
+
+    mask_attribute: One of the following options: "Hair", "Eyebrows", "Eyes", "Nose", "Ear", "Lips", "Beard", "Face"
+    
+    face_attribute: One of the following options: "age", "race", "sex", "hair_length", "hair_color", "hair_style", "eye_color", "glasses", "facial_hair"
+    
     """
 
     mask_attribute: str = "Hair"
