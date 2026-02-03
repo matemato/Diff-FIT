@@ -76,7 +76,6 @@ If you use the code or results from this repository, please cite the ID-Booth pa
 
 ```
 To Be Added.
-}
 ```
 
 ## Acknowledgements
