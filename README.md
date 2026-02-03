@@ -70,3 +70,16 @@ This repository provides scripts for generating datasets as described in the pap
 - **[Cosine Similarity with ArcFace](https://learnopencv.com/face-recognition-with-arcface/)**: A metric for face recognition and similarity evaluation using ArcFace embeddings.
 - **[FFHQ](https://github.com/NVlabs/ffhq-dataset)**: A high-quality dataset of human faces for training and evaluation.
 
+## Citation
+
+If you use the code or results from this repository, please cite the ID-Booth paper:
+
+```
+To Be Added.
+}
+```
+
+## Acknowledgements
+
+Supported in parts by the Slovenian Research and Innovation Agency (ARIS) through the Research Programmes P2-0250 (B) "Metrology and Biometric Systems" and P2-0214 (A) “Computer Vision”, the ARIS Project J2-50065 "DeepFake DAD" and the ARIS Young Researcher Programme.
+
