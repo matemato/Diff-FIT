@@ -6,6 +6,10 @@ Diff-FIT is an open-source framework for realistic facial composite generation u
 <a href='https://ieeexplore.ieee.org/document/11426945'><img src='https://img.shields.io/badge/Paper-IEEE Access-blue'></a>
 <a href='https://www.youtube.com/watch?v=dQfVzM80bwU'><img src='https://img.shields.io/badge/Video-YouTube-maroon'></a>
 
+<p>
+   <img width="100%" src="./assets/example_creation.jpg">
+</p>
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -42,7 +46,12 @@ Run the Diff-FIT application:
 poetry run diff_fit
 ```
 
-Once the application loads, navigate to `http://localhost:7860` in your web browser to access the interface.
+Once the application loads, navigate to `http://localhost:7860` in your web browser to access the interface. The interface is organized into four pipelines: (a) image generation for creating initial facial composites from eyewitness description, (b) image-to-image for creating global variations of the composite, (c) image inpainting for local editing of facial features, and (d) drag-based editing for geometric transformations.
+
+<p>
+   <img width="100%" src="./assets/user_interface.jpg">
+</p>
+
 
 ## Dataset Generation
 
@@ -81,7 +90,7 @@ If you use the code or results from this repository, please cite the Diff-FIT pa
 @article{tomasevic2025DiffFIT,
   title={{Diff-FIT}: Generating Facial Composites with Diffusion Models},
   author={Toma{\v{s}}evi{\'c}, Darian and Peer, Peter and {\v{S}}truc, Vitomir and Mio{\v{c}}i{\'c}, Matej},
-  booktitle={IEEE Access}, 
+  journal={IEEE Access}, 
   year={2026},
   pages={1-20},
 }
