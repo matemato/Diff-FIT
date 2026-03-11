@@ -2,6 +2,7 @@
 
 Diff-FIT is an open-source framework for realistic facial composite generation using diffusion models. It supports both full face generation and targeted edits through an interactive workflow that integrates face-segmentation–guided inpainting for precise region editing and landmark-assisted Lightning Drag for fast, high-quality, controllable results.
 
+DEMO video: https://www.youtube.com/watch?v=dQfVzM80bwU
 
 ## Table of Contents
 
