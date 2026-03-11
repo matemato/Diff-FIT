@@ -1,8 +1,10 @@
-# Diff-FIT
+# Diff-FIT: Generating Facial Composites with Diffusion Models
 
-Diff-FIT is an open-source framework for realistic facial composite generation using diffusion models. It supports both full face generation and targeted edits through an interactive workflow that integrates face-segmentation–guided inpainting for precise region editing and landmark-assisted Lightning Drag for fast, high-quality, controllable results.
+Diff-FIT is an open-source framework for realistic facial composite generation using diffusion models. It supports both full face generation and targeted edits through an interactive workflow that integrates face-segmentation–guided inpainting for precise region editing and landmark-assisted drag-based editing for fast, high-quality, controllable results.
 
-DEMO video: https://www.youtube.com/watch?v=dQfVzM80bwU
+
+<a href='https://ieeexplore.ieee.org/document/11426945'><img src='https://img.shields.io/badge/Paper-IEEE Access-blue'></a>
+<a href='https://www.youtube.com/watch?v=dQfVzM80bwU'><img src='https://img.shields.io/badge/Video-YouTube-maroon'></a>
 
 ## Table of Contents
 
@@ -73,10 +75,16 @@ This repository provides scripts for generating datasets as described in the pap
 
 ## Citation
 
-If you use the code or results from this repository, please cite the ID-Booth paper:
+If you use the code or results from this repository, please cite the Diff-FIT paper:
 
 ```
-To Be Added.
+@article{tomasevic2025DiffFIT,
+  title={{Diff-FIT}: Generating Facial Composites with Diffusion Models},
+  author={Toma{\v{s}}evi{\'c}, Darian and Peer, Peter and {\v{S}}truc, Vitomir and Mio{\v{c}}i{\'c}, Matej},
+  booktitle={IEEE Access}, 
+  year={2026},
+  pages={1-20},
+}
 ```
 
 ## Acknowledgements
